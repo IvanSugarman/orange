@@ -1,0 +1,392 @@
+//color
+$blue: #20a0ff;
+$red: #d9534f;
+$green: #5cb85c;
+$white: #FFFFFF;
+$orange: #f0ad4e;
+$lightenGray: #d3dce6;
+$backgroundColor: #efefef;
+$textColor: #1f2d3d;
+
+//width
+$width_1024: 1024px;
+$width_1366: 1366px;
+$width_1440: 1440px;
+$width_1920: 1920px;
+$width_1280: 1265px;
+
+//standard
+$screen: 5; // 1.1024,2.1366,3.1440,4.1920
+$mainColor: #FFFFFF;
+$mainFontSize: 12px;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0 auto;
+  height: 100%;
+  background-color: $backgroundColor;
+  font-size: $mainFontSize;
+  color: $textColor;
+}
+
+body, button, input, select, textarea {
+  font: 14px/1.5 tahoma, arial, \5b8b\4f53
+}
+
+h1, h2, h3, h4, h5, h6 {
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+code, kbd, pre, samp {
+  font-family: courier new, courier, monospace
+}
+
+small {
+  font-size: 12px
+}
+
+ul, ol, li, dl, dt, dd {
+}
+
+sup {
+  vertical-align: text-top
+}
+
+sub {
+  vertical-align: text-bottom
+}
+
+legend {
+  color: #000
+}
+
+fieldset, img {
+  border: 0
+}
+
+a {
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font: 14px/1.5 tahoma, arial, sans-serif;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+input[disabled] {
+  border: 1px solid #DDD;
+  background-color: #F5F5F5;
+  color: dimgray;
+  cursor: default;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+.clear {
+  display: block;
+  float: none;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  background: none;
+  border: 0;
+  font-size: 0
+}
+
+/*clearfix*/
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.wrapper {
+  position: relative;
+  @if ($screen == 1) {
+    //1024
+    width: $width_1024;
+    min-width: $width_1024;
+    height: 768px;
+  } @else if ($screen == 2) {
+    //1366
+    width: $width_1366;
+    min-width: $width_1366;
+    height: 768px;
+  } @else if ($screen == 3) {
+    //1440
+    width: $width_1440;
+    min-width: $width_1440;
+    height: 900px;
+  } @else if ($screen == 4) {
+    //1920
+    width: $width_1920;
+    min-width: $width_1920;
+    height: 1680px;
+  } @else if ($screen == 5) {
+    width: $width_1280;
+    height: 800px;
+    min-width: $width_1280;
+  } @else {
+    width: 100%;
+  }
+}
+
+//模态框
+$modal_width: 400px; //默认宽度
+$modal_height: 600px; //默认高度
+$modal_header: 50px; //默认头部高度
+$modal_footer: 60px; //默认底部高度
+.myModal {
+  width: $modal_width;
+  height: $modal_height;
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  background-color: #FFFFFF;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0.75em #777777;
+  -moz-box-shadow: 0 0 0.75em #777777;
+  -webkit-box-shadow: 0 0 0.75em #777777;
+  -o-box-shadow: 0 0 0.75em #777777;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  display: none;
+  header {
+    width: 100%;
+    height: $modal_header;
+    line-height: $modal_header;
+    box-shadow: 0 1px 0 0 $lightenGray;
+  }
+  .content {
+    padding: 10px;
+    height: ($modal_height - $modal_header - $modal_footer);
+  }
+  footer {
+    box-sizing: border-box;
+    width: 100%;
+    height: $modal_footer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+//置于body闭标签上方
+.myModalMask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0.5;
+  display: none;
+}
+
+//button
+@mixin buttonStyle($color : $blue) {
+  border: 1px solid $color;
+  background-color: $white;
+  color: $color;
+}
+
+@mixin buttonStyleHover($color : $blue) {
+  border: none;
+  background-color: $color;
+  color: $white;
+}
+
+button {
+  width: 140px; //默认值
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 3px;
+  border: none;
+  color: $white;
+  outline: none;
+  &.blue {
+    background-color: $blue;
+  }
+  &.blue:hover {
+    background-color: darken($blue, 10%);
+  }
+  &.blue-border {
+    @include buttonStyle($blue);
+  }
+  &.blue-border:hover {
+    @include buttonStyleHover($blue);
+  }
+  &.red {
+    background-color: $red;
+  }
+  &.red:hover {
+    background-color: darken($red, 10%);
+  }
+  &.red-border {
+    @include buttonStyle($red);
+  }
+  &.red-border:hover {
+    @include buttonStyleHover($red);
+  }
+  &.orange {
+    background-color: $orange;
+  }
+  &.orange:hover {
+    background-color: darken($orange, 10%);
+  }
+  &.orange-border {
+    @include buttonStyle($orange);
+  }
+  &.orange-border:hover {
+    @include buttonStyleHover($orange);
+  }
+  &.green {
+    background-color: $green;
+  }
+  &.green:hover {
+    background-color: darken($green, 10%);
+  }
+  &.green-border {
+    @include buttonStyle($green);
+  }
+  &.green-border:hover {
+    @include buttonStyleHover($green);
+  }
+}
+
+//单组件遮罩
+//设置父组件position:relative
+.mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+//select重置
+$select_width: 120px;
+
+.mySelect {
+  width: $select_width;
+  height: 20px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  position: relative;
+  color: $textColor;
+  //background: url("../img/triangle.png") no-repeat #FFFFFF 102px 7px;
+  div {
+    width: $select_width;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  ul {
+    width: $select_width;
+    max-height: 200px;
+    position: absolute;
+    top: 22px;
+    left: 0;
+    background: #FFFFFF;
+    overflow-y: auto;
+    li {
+      width: 100%;
+      text-align: center;
+      &:hover {
+        background: lighten($blue, 20%);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.mySelect::-ms-expand {
+  display: none;
+}
+
+//分页
+.pagination {
+  width: auto;
+  height: 30px;
+  text-align: center;
+  margin: 10px auto;
+  overflow: hidden;
+  .prev,.next{
+    border: 1px solid $blue;
+    margin: 0 10px;
+  }
+  .prev,.next,ul li{
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    float: left;
+    background-color: $white;
+    color: $blue;
+    border: 1px solid $blue;
+    &:hover{
+      background-color: $blue;
+      color: $white;
+      border: 1px solid $blue;
+    }
+  }
+  ul{
+    li{
+      margin: 0 3px;
+    }
+    li.active {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+}
