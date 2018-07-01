@@ -1,6 +1,6 @@
 ## introduction 
 
-#### hello world
+#### create
 创建文件 -> 可执行权限 -> 执行
 ```bash
 echo echo Hello World > hello_world
