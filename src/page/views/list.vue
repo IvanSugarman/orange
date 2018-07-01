@@ -1,12 +1,10 @@
 <template>
   <div class="container">
-    <router-link to="/" class="title" tag="div">
-      The Orange
-    </router-link>
+    <anchor/>
     <ul>
-      <li v-for="item in list">
+      <router-link tag="li" v-bind:to="'/article/' + item.href" v-for="item in list" :key="item.href">
         <span class="date">{{item.year}}.{{item.month}}.{{item.date}}</span><span class="name">{{item.title}}</span>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -24,16 +22,6 @@
 <style scoped>
   .container {
     padding: 24px;
-  }
-
-  .title {
-    position: fixed;
-    right: 20px;
-    top: 18px;
-    font-size: 14px;
-    color: #6c879c;
-    font-family: Pacifico, Lato, "PingFang SC", "Microsoft YaHei", Tahoma;
-    cursor: pointer;
   }
 
   ul {

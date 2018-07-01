@@ -19,6 +19,17 @@ export default new Vuex.Store({
 
       return result.reverse();
     },
+    getArticle: state => title => {
+      let result = {};
+
+      state.list.forEach(item => {
+         if (title == item.href) {
+           result = item;
+         }
+      });
+
+      return result;
+    },
     getBook: state => state.book,
   },
   mutations: {

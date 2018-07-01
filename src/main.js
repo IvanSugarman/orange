@@ -7,8 +7,10 @@ import vuex from 'vuex'
 
 import Highlight from '@/assets/vendor/HighLight.js'
 import store from './vuex/index';
+import Anchor from './components/anchor'
 
 Vue.use(Highlight);
+Vue.component('anchor', Anchor);
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -16,6 +18,6 @@ new Vue({
   el: '#app',
   router,
   store,
-  components: { App },
+  components: { App, Anchor},
   template: '<App/>'
 })

@@ -45,11 +45,36 @@ const route = [
     children: [{
       title: 'shell-script',
       type: 'md',
+    },{
+      title: 'vue-cli-spa',
+      type: 'md',
+    },{
+      title: 'Geek-If-H5',
+      type: 'md',
+    },{
+      title: 'http2',
+      type: 'md',
+    },{
+      title: 'js-study',
+      type: 'md',
+    },{
+      title: 'interview',
+      type: 'md',
+    },{
+      title: 'Imperative-Vs-Declarative',
+      type: 'md',
+    },{
+      title: 'eventloop',
+      type: 'md',
+    },{
+      title: 'nginx',
+      type: 'md',
+    },{
+      title: 'tcp-ip',
+      type: 'md',
     }],
   }
 ];
-
-console.log(route__format(route));
 
 export default new Router({
   mode: 'history',
