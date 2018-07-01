@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/page/views/index'
 import List from '@/page/views/list'
+import Book from '@/page/views/book'
 import Article from '@/page/views/article'
 
 Vue.use(Router)
@@ -37,6 +38,11 @@ const route = [
     path: '/list',
     name: 'list',
     component: List,
+  },
+  {
+    path: '/book',
+    name: 'book',
+    component: Book,
   },
   {
     path: '/article',

@@ -11,9 +11,9 @@
           <li>
             essays
           </li>
-          <li>
+          <router-link tag="li" to="book">
             books
-          </li>
+          </router-link>
           <li>
             about
           </li>

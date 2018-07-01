@@ -2,8 +2,9 @@
 
 ### 适配
 1.  设置viewport为设备宽度
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+```xml
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+```
 2.  将Viewport分成10rem，并计算1rem在当前浏览器中的像素值，赋值给root中font-size
 
 ```
