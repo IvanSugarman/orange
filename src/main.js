@@ -7,7 +7,7 @@ import Highlight from '@/assets/vendor/HighLight.js'
 
 Vue.config.productionTip = false
 
-Vue.use(Highlight)
+Vue.use(Highlight);
 
 /* eslint-disable no-new */
 new Vue({
