@@ -107,4 +107,60 @@
     font-family: monospace, monospace;
     font-size: 12px;
   }
+
+  article table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    word-break: normal;
+    word-break: keep-all;
+  }
+
+  article table th {
+    font-weight: bold;
+  }
+
+  article table th,
+  article table td {
+    padding: 6px 13px;
+    border: 1px solid #ddd;
+  }
+
+  article table tr {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+  }
+
+  article table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+  }
+
+  article table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  article td,
+  article th {
+    padding: 0;
+  }
+
+  article td:not(.linenos) .linenodiv {
+    padding: 0 !important;
+  }
+
+
+  article ul,
+  article ol {
+    padding-left: 2em;
+  }
+
+  article ul ul,
+  article ul ol,
+  article ol ol,
+  article ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
 </style>
