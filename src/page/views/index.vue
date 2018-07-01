@@ -5,9 +5,9 @@
       </div>
       <div class="bar">
         <ul>
-          <li>
+          <router-link tag="li" to="list">
             notes
-          </li>
+          </router-link>
           <li>
             essays
           </li>
@@ -65,6 +65,7 @@
 
   .bar > ul > li:hover {
     color: rgba(0, 0, 0, 0.6);
+    text-decoration: underline;
   }
 
   li + li {

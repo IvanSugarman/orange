@@ -11,8 +11,20 @@ Vue.config.debug = debug;
 export default new Vuex.Store({
   state,
   getters: {
-    getList: state => state.list,
+    getRList(state) {
+      const result = [];
+      state.list.forEach(item => {
+        result.push(item);
+      });
+
+      return result.reverse();
+    },
     getBook: state => state.book,
+  },
+  mutations: {
+    reverse(list) {
+      return list.reverse();
+    }
   },
   strict: debug,
 });
