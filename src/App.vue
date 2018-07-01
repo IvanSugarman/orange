@@ -13,4 +13,10 @@
 </script>
 
 <style>
+  @import "assets/font/font.css";
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
 </style>
