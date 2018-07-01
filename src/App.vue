@@ -1,6 +1,8 @@
 <template>
-  <div id="app" v-highlight>
+  <div id="app">
+    <div>
       <router-view/>
+    </div>
   </div>
 </template>
 

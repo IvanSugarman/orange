@@ -5,9 +5,8 @@ import App from './App'
 import router from '@/router/index.js'
 import Highlight from '@/assets/vendor/HighLight.js'
 
-Vue.config.productionTip = false
-
 Vue.use(Highlight);
+Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
