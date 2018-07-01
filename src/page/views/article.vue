@@ -1,5 +1,6 @@
 <template>
     <div>
+      <router-view v-highlight></router-view>
     </div>
 </template>
 

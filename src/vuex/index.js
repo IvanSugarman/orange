@@ -10,5 +10,9 @@ Vue.config.debug = debug;
 
 export default new Vuex.Store({
   state,
+  getters: {
+    getList: state => state.list,
+    getBook: state => state.book,
+  },
   strict: debug,
 });

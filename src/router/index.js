@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/page/views/index'
+import List from '@/page/views/list'
+import Article from '@/page/views/article'
 
 Vue.use(Router)
 
@@ -8,7 +10,7 @@ function route__format(route) {
   return Object.keys(route).map((index) => {
     const {type, title, children} = route[index];
 
-    if (!!children && children.length) {
+    if (children && children.length) {
        route[index].children = route__format(children);
     }
 
@@ -27,17 +29,23 @@ function route__format(route) {
 
 const route = [
   {
-    path: '/index',
+    path: '/',
+    name: 'index',
     component: Index,
+  },
+  {
+    path: '/list',
+    name: 'list',
+    component: List,
+  },
+  {
+    path: '/article',
+    name: 'article',
+    component: Article,
     children: [{
       title: 'shell-script',
       type: 'md',
     }],
-  },
-  {
-    path: '',
-    name: 'hello',
-    component: resolve => require(['@/components/HelloWorld.vue'], resolve)
   }
 ];
 

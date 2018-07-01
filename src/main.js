@@ -3,7 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from '@/router/index.js'
+import vuex from 'vuex'
+
 import Highlight from '@/assets/vendor/HighLight.js'
+import store from './vuex/index';
 
 Vue.use(Highlight);
 Vue.config.productionTip = false
@@ -12,6 +15,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
