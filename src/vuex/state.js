@@ -59,7 +59,7 @@ export default {
     href: 'interview',
     star: false,
   },{
-    title: '命令式编程与声明式编程测试1',
+    title: '命令式编程与声明式编程测试2',
     year: '2018',
     month: '03',
     date: '11',
