@@ -25,6 +25,7 @@
   }
 
   ul {
+    display: inline-block;
     list-style-type: none;
     font-family: PingFang;
     font-size: 14px;
