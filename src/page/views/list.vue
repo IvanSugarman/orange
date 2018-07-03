@@ -2,9 +2,9 @@
   <div class="container">
     <anchor/>
     <ul>
-      <router-link tag="li" v-bind:to="'/article/' + item.href" v-for="item in list" :key="item.href">
-        <span class="date">{{item.year}}.{{item.month}}.{{item.date}}</span><span class="name">{{item.title}}</span>
-      </router-link>
+      <li v-for="item in list" :key="item.href">
+        <span class="date">{{item.year}}.{{item.month}}.{{item.date}}</span><router-link tag="span" v-bind:to="'/article/' + item.href" class="name">{{item.title}}</router-link>
+      </li>
     </ul>
   </div>
 </template>
