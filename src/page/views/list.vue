@@ -27,7 +27,8 @@
   ul {
     display: inline-block;
     list-style-type: none;
-    font-family: PingFang;
+    font-family: "PingFang SC", Arial;
+    font-weight: bold;
     font-size: 14px;
     font-weight: 800;
     color: rgb(153, 153, 153);
