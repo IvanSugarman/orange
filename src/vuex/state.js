@@ -52,7 +52,6 @@ export default {
     href: 'eventloop',
     star: false,
   },{
-    id: 8,
     title: 'nginx basic',
     year: '2018',
     month: '04',
@@ -60,7 +59,13 @@ export default {
     href: 'nginx',
     star: false,
   },{
-    id: 9,
+    title: '浏览器渲染',
+    href: 'browser-render',
+    month: '05',
+    date: '25',
+    year: '2018',
+    staru: false,
+  },{
     title: 'tcp/ip',
     year: '2018',
     month: '05',
@@ -73,7 +78,7 @@ export default {
     month: '06',
     date: '30',
     year: '2018',
-    star: true,
+    star: false,
   }],
   book: [{
     title: 'CSS权威指南',

@@ -78,6 +78,9 @@ const route = [
     },{
       title: 'tcp-ip',
       type: 'md',
+    },{
+      title: 'browser-render',
+      type: 'md',
     }],
   }
 ];
