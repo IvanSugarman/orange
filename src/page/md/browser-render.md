@@ -1,12 +1,10 @@
-![image](http://dev.chromium.org/developers/design-documents/gpu-accelerated-compositing-in-chrome/the_compositing_forest.png?attredirects=0)
-
 1. 
-
-    - HTML + JS -> HTMLParse + V8 -> DomTree 
-    - CSS -> CSS Parser -> CSS Rules
-    - CSS Rules attach Dom Tree -> Render Object
+- HTML + JS -> HTMLParse + V8 -> DomTree 
+- CSS -> CSS Parser -> CSS Rules
+- CSS Rules attach Dom Tree -> Render Object
 
     DOM节点通过连接CSS可以生成++Render Tree++
+    
 2.  RenderTree中的RenderObject可能因为某些概念与DOM树区分而形成render layer, 构成++Layer Tree++(BFC&IFC, 伪元素, display:none与html的list tag)
 3.  根据Render Layer与Render Object生成LayoutTree，根据CSS样式确定大小和位置
 4.  PaintLayer根据特定HTML标签或者CSS样式创建，主要用来确定页面元素绘制顺序。可以包含多个Render Object。在多个层上完成绘制的过程。是Graphics Layer创建的最小单位。
