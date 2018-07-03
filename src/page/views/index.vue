@@ -46,7 +46,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: Pacifico, Lato, "PingFang SC", "Microsoft YaHei", Tahoma;
+    font-family: Pacifico;
   }
 
   .title {

@@ -26,7 +26,7 @@
 
   ul {
     list-style-type: none;
-    font-family: PingFangSC, sans-serif;
+    font-family: PingFang;
     font-size: 14px;
     font-weight: 500;
     color: rgb(153, 153, 153);

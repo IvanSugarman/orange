@@ -21,13 +21,11 @@
   }
 
   article {
-    font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     color: #333333;
     overflow: hidden;
     font-size: 14px;
-    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
     line-height: 1.6;
     word-wrap: break-word;
   }
