@@ -61,7 +61,16 @@ const route = [
       title: 'http2',
       type: 'md',
     },{
-      title: 'js-study',
+      title: 'js-study-domain',
+      type: 'md',
+    },{
+      title: 'js-study-this',
+      type: 'md',
+    },{
+      title: 'js-study-objct',
+      type: 'md',
+    },{
+      title: 'js-study-prototype',
       type: 'md',
     },{
       title: 'interview',
