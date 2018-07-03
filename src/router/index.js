@@ -67,7 +67,7 @@ const route = [
       title: 'js-study-this',
       type: 'md',
     },{
-      title: 'js-study-objct',
+      title: 'js-study-object',
       type: 'md',
     },{
       title: 'js-study-prototype',
