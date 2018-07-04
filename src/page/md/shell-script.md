@@ -198,6 +198,19 @@ do
 done
 ```
 
+- shopt
+shopt命令与set命令是打开bash shell选项的两个开关。通过这些选项来增强shell的易用性。
+```bash
+    # 不带任何选项 显示所有
+    shopt 
+    # -s 打开行为选项
+    shopt -s cdspell
+    # -u 关闭行为选项
+    shopt -u cdspell
+    # -p 查看行为选项状态
+    shopt -p cdspell ; echo $?
+```
+
 ## more scripting
 #### eval
 eval允许输入变量的值作为变量,当变量中包含任何需要shell直接在命令行中看到的字符而非替换结果，就可以使用eval
