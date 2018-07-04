@@ -217,3 +217,46 @@ eval "y=\$$word"; echo $y
 ```
 let x--; echo $x;
 ```
+
+#### let
+let指令是用于计算的工具, 与直接声明变量不同的是,let指令可以存储数学计算之后的变量
+```bash
+    let x="3+4" ; echo $x
+    let x="0xFF"; echo $x
+``` 
+
+#### case
+case用于简化嵌套的if语句
+```bash
+    echo -n 'What animal you see?'
+    read animal
+    case $animal in
+        "lion" | "tiger")
+            echo "Run"
+        ;;
+        "cat")
+            echo "Mouse"
+        ;;
+        *)
+            echo "default"
+        ;;
+    esac
+```
+
+#### shell function
+```bash
+    # default
+    function greetings {
+        echo Hello World!    
+    }    
+    
+    echo Hi
+    greetings
+    
+    # params
+    function plus {
+        let result = "$1 + $2"
+        echo $1 + $2 = $result
+    }
+    plus 1 3
+```
