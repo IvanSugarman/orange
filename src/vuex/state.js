@@ -101,7 +101,7 @@ export default {
     year: '2018',
     star: false,
   },{
-    title: 'linux-user'
+    title: 'linux-user',
     href: 'linux-user',
     month: '07',
     date: '05',
