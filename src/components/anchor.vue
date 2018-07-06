@@ -20,6 +20,7 @@
     font-size: 14px;
     color: #000;
     font-family: Pacifico, Lato, "PingFang SC", "Microsoft YaHei", Tahoma;
+    font-weight: bold;
     cursor: pointer;
   }
 </style>
