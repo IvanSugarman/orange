@@ -100,6 +100,13 @@ export default {
     date: '30',
     year: '2018',
     star: false,
+  },{
+    title: 'linux-user'
+    href: 'linux-user',
+    month: '07',
+    date: '05',
+    year: '2018',
+    star: false,
   }],
   book: [{
     title: 'CSS权威指南',

@@ -90,6 +90,9 @@ const route = [
     },{
       title: 'browser-render',
       type: 'md',
+    },{
+      title: 'linux-user',
+      type: 'md',
     }],
   }
 ];
