@@ -1,5 +1,3 @@
-## linux local user management
-
 #### introduction 
 - whoami
 - who: 输出当前访问系统用户

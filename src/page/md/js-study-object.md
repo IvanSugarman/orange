@@ -1,6 +1,3 @@
-
-## 对象
-
 #### JavaScript基础
 
 6种主要对象: string,number,boolean,null,undefind,object

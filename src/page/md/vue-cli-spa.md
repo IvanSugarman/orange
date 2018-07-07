@@ -1,4 +1,3 @@
-## 前言
 基于VueCli搭建单页应用个人博客网站。
 - 项目框架: Vue
 - 辅助框架: Vuex Vue-router Echarts

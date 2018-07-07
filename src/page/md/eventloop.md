@@ -1,5 +1,3 @@
-## eventLoop
-
 JavaScript是一种单线程的语言，其原因是多线程会带来++复杂的同步问题++。为了利用多核cpu的能力，html5中允许主线程创建多个子线程，但是++子线程完全受主线程控制且无法操作DOM++。blink的eventloop依赖于libevent库。
 
 #### 任务分类
