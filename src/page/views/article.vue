@@ -54,6 +54,7 @@
     justify-content: flex-start;
     padding-top: 20px;
     width: 50%;
+    min-width: 600px;
   }
 
 

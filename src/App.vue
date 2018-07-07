@@ -30,6 +30,15 @@
     word-wrap: break-word;
   }
 
+  article li {
+    margin: 5px 0;
+  }
+
+  article p {
+     margin: 5px 0;
+     word-break: break-all;
+  }
+
   article h1,
   article h2,
   article h3,
