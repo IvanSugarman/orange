@@ -107,6 +107,13 @@ export default {
     date: '05',
     year: '2018',
     star: false,
+  },{
+    title: 'Service Worker',
+    href: 'pwa-service-worker',
+    month: '07',
+    date: '08',
+    year: '2018',
+    star: true,
   }],
   book: [{
     title: 'CSS权威指南',

@@ -93,6 +93,9 @@ const route = [
     },{
       title: 'linux-user',
       type: 'md',
+    },{
+      title: 'pwa-service-worker',
+      type: 'md',
     }],
   }
 ];
