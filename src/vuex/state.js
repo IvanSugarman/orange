@@ -114,6 +114,13 @@ export default {
     date: '08',
     year: '2018',
     star: true,
+  },{
+    title: 'linux-file',
+    href: 'linux-file',
+    month: '07',
+    date: '09',
+    year: '2018',
+    star: false,
   }],
   book: [{
     title: 'CSS权威指南',
