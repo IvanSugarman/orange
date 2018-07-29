@@ -1,6 +1,3 @@
-
-## 原型
-
 #### prototype
 JavaScript对象中有一个特殊的[prototype]内置属性，其实是对于其他对象的引用。几乎所有的对象在创建时prototype都会赋予一个非空值。
 
