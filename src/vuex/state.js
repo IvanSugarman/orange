@@ -121,6 +121,13 @@ export default {
     date: '09',
     year: '2018',
     star: false,
+  },{
+    title: 'git rebase/merge',
+    href: 'git-rebase',
+    month: '08',
+    date: '22',
+    year: '2018',
+    star: false,
   }],
   book: [{
     title: 'CSS权威指南',

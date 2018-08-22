@@ -99,6 +99,9 @@ const route = [
     },{
       title: 'linux-file',
       type: 'md',
+    },{
+      title: 'git-rebase',
+      type: 'md',
     }],
   }
 ];
