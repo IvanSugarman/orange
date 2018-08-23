@@ -19,6 +19,12 @@ export default new Vuex.Store({
 
       return result.reverse();
     },
+    getRTools(state) {
+        const result = [];
+        state.tools.forEach(item => {
+            result.push(item);
+        });
+    },
     getArticle: state => title => {
       let result = {};
 
