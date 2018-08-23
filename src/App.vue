@@ -112,7 +112,12 @@
   article pre,
   article samp {
     font-family: monospace, monospace;
-    font-size: 12px;
+    font-size: 14px;
+  }
+
+  article code {
+    padding: .2em .4em;
+    background-color: rgba(27, 31, 35, 0.05);
   }
 
   article table {
