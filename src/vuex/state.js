@@ -128,6 +128,13 @@ export default {
     date: '22',
     year: '2018',
     star: false,
+  }, {
+    title: 'fetch笔记',
+    href: 'fetch',
+    month: '08',
+    date: '27',
+    year: '2018',
+    star: false,
   }],
   tools: [{
     title: 'taskbook',
