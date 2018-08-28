@@ -85,8 +85,8 @@
   }
 
   article blockquote {
-    margin: 0;
-    padding: 0 1em;
+    margin: 1em 0;
+    padding: .5em 1em;
     color: #6a737d;
     border-left: .25em solid #dfe2ef;
   }
