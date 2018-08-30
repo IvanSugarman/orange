@@ -8,14 +8,14 @@
           <router-link tag="li" to="list">
             notes
           </router-link>
-          <li>
-            essays
-          </li>
+          <router-link tag="li" to="tools">
+            tools
+          </router-link>
           <router-link tag="li" to="book">
             books
           </router-link>
           <li>
-            about
+            essays
           </li>
         </ul>
       </div>

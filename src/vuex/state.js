@@ -121,6 +121,27 @@ export default {
     date: '09',
     year: '2018',
     star: false,
+  },{
+    title: 'git rebase/merge',
+    href: 'git-rebase',
+    month: '08',
+    date: '22',
+    year: '2018',
+    star: false,
+  }, {
+    title: 'fetch笔记',
+    href: 'fetch',
+    month: '08',
+    date: '27',
+    year: '2018',
+    star: false,
+  }],
+  tools: [{
+    title: 'taskbook',
+    href: 'taskbook',
+    month: '08',
+    date: '23',
+    year: '2018',
   }],
   book: [{
     title: 'CSS权威指南',

@@ -85,7 +85,10 @@
   }
 
   article blockquote {
-    margin: 0;
+    margin: 1em 0;
+    padding: .5em 1em;
+    color: #6a737d;
+    border-left: .25em solid #dfe2ef;
   }
 
   article ul,
@@ -112,7 +115,12 @@
   article pre,
   article samp {
     font-family: monospace, monospace;
-    font-size: 12px;
+    font-size: 14px;
+  }
+
+  article code {
+    padding: .2em .4em;
+    background-color: rgba(27, 31, 35, 0.05);
   }
 
   article table {

@@ -40,8 +40,15 @@ export default new Vuex.Store({
       return result.reverse();
     },
     getTotalPage(state) {
-      console.log(state.list.length);
       return Math.floor(state.list.length / PAGENUM) + 1;
+    },
+    getRTools(state) {
+        const result = [];
+        state.tools.forEach(item => {
+            result.push(item);
+        });
+
+        return result.reverse();
     },
     getArticle: state => title => {
       let result = {};

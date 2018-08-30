@@ -4,6 +4,7 @@ import Index from '@/page/views/index'
 import List from '@/page/views/list'
 import Book from '@/page/views/book'
 import Article from '@/page/views/article'
+import Tools from '@/page/views/tools'
 
 Vue.use(Router)
 
@@ -28,6 +29,70 @@ function route__format(route) {
   });
 }
 
+const articles = [{
+  title: 'shell-script',
+  type: 'md',
+},{
+  title: 'vue-cli-spa',
+  type: 'md',
+},{
+  title: 'Geek-If-H5',
+  type: 'md',
+},{
+  title: 'http2',
+  type: 'md',
+},{
+  title: 'js-study-domain',
+  type: 'md',
+},{
+  title: 'js-study-this',
+  type: 'md',
+},{
+  title: 'js-study-object',
+  type: 'md',
+},{
+  title: 'js-study-prototype',
+  type: 'md',
+},{
+  title: 'interview',
+  type: 'md',
+},{
+  title: 'Imperative-Vs-Declarative',
+  type: 'md',
+},{
+  title: 'eventloop',
+  type: 'md',
+},{
+  title: 'nginx',
+  type: 'md',
+},{
+  title: 'tcp-ip',
+  type: 'md',
+},{
+  title: 'browser-render',
+  type: 'md',
+},{
+  title: 'linux-user',
+  type: 'md',
+},{
+  title: 'pwa-service-worker',
+  type: 'md',
+},{
+  title: 'linux-file',
+  type: 'md',
+},{
+  title: 'git-rebase',
+  type: 'md',
+},{
+  title: 'fetch',
+  type: 'md',
+}];
+
+const tools = [{
+  title: 'taskbook',
+  type: 'md',
+}];
+
 const route = [
   {
     path: '/',
@@ -45,61 +110,15 @@ const route = [
     component: Book,
   },
   {
+    path: '/tools',
+    name: 'tools',
+    component: Tools,
+  },
+  {
     path: '/article',
     name: 'article',
     component: Article,
-    children: [{
-      title: 'shell-script',
-      type: 'md',
-    },{
-      title: 'vue-cli-spa',
-      type: 'md',
-    },{
-      title: 'Geek-If-H5',
-      type: 'md',
-    },{
-      title: 'http2',
-      type: 'md',
-    },{
-      title: 'js-study-domain',
-      type: 'md',
-    },{
-      title: 'js-study-this',
-      type: 'md',
-    },{
-      title: 'js-study-object',
-      type: 'md',
-    },{
-      title: 'js-study-prototype',
-      type: 'md',
-    },{
-      title: 'interview',
-      type: 'md',
-    },{
-      title: 'Imperative-Vs-Declarative',
-      type: 'md',
-    },{
-      title: 'eventloop',
-      type: 'md',
-    },{
-      title: 'nginx',
-      type: 'md',
-    },{
-      title: 'tcp-ip',
-      type: 'md',
-    },{
-      title: 'browser-render',
-      type: 'md',
-    },{
-      title: 'linux-user',
-      type: 'md',
-    },{
-      title: 'pwa-service-worker',
-      type: 'md',
-    },{
-      title: 'linux-file',
-      type: 'md',
-    }],
+    children: articles.concat(tools),
   }
 ];
 
