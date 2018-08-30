@@ -1,6 +1,6 @@
 #### 解析生成Render Tree
-- HTML + JS -> HTMLParse + V8 -> DomTree 
-- CSS -> CSS Parser -> CSS Rules
+- HTML与JS通过V8解析与html解析器生成DomTree 
+- CSS通过css解析器生成CSS Rules Tree
 - CSS Rules attach Dom Tree -> Render Object
 
     DOM节点通过连接CSS可以生成**Render Tree**
