@@ -6,30 +6,16 @@
         <span class="date">{{item.year}}.{{item.month}}.{{item.date}}</span><router-link tag="span" v-bind:to="'/article/' + item.href" class="name">{{item.title}}</router-link>
       </li>
     </ul>
-    <div class="pagination">
-      <span class="pagination-prev">< </span> {{pageNum}} / {{totalPage}} <span class="pagination-next">></span>
-    </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   export default{
-    data() {
-      return {
-        pageNum: 1,
-      };
-    },
     computed: {
       list: function() {
-        return this.$store.getters.getRListByPage(this.pageNum);
+        return this.$store.getters.getRList;
       },
-      totalPage: function() {
-        return this.$store.getters.getTotalPage;
-      }
     },
-    methods: {
-
-    }
   };
 </script>
 
