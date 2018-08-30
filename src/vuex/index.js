@@ -8,6 +8,8 @@ Vue.use(Vuex);
 const debug = process.env.NODE_ENV !== 'production';
 Vue.config.debug = debug;
 
+const PAGENUM = 15;
+
 export default new Vuex.Store({
   state,
   getters: {
@@ -18,6 +20,28 @@ export default new Vuex.Store({
       });
 
       return result.reverse();
+    },
+    getRListByPage: state => pageNum => {
+      const result = [];
+      let max;
+      let min;
+
+      max = pageNum * PAGENUM;
+      min = (pageNum - 1) * PAGENUM;
+
+      for (; min < max; min++) {
+        if (state.list[min]) {
+          result.push(state.list[min]);
+        } else {
+          return result.reverse();
+        }
+      }
+
+      return result.reverse();
+    },
+    getTotalPage(state) {
+      console.log(state.list.length);
+      return Math.floor(state.list.length / PAGENUM) + 1;
     },
     getArticle: state => title => {
       let result = {};

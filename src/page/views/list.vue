@@ -6,6 +6,9 @@
         <span class="date">{{item.year}}.{{item.month}}.{{item.date}}</span><router-link tag="span" v-bind:to="'/article/' + item.href" class="name">{{item.title}}</router-link>
       </li>
     </ul>
+    <div class="pagination">
+      <span class="pagination-prev">< </span> {{pageNum}} / {{totalPage}} <span class="pagination-next">></span>
+    </div>
   </div>
 </template>
 
@@ -13,9 +16,20 @@
   export default{
     data() {
       return {
-        list: this.$store.getters.getRList,
+        pageNum: 1,
       };
     },
+    computed: {
+      list: function() {
+        return this.$store.getters.getRListByPage(this.pageNum);
+      },
+      totalPage: function() {
+        return this.$store.getters.getTotalPage;
+      }
+    },
+    methods: {
+
+    }
   };
 </script>
 
@@ -44,5 +58,18 @@
 
   .name:hover {
     text-decoration: underline;
+  }
+
+  .pagination {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(153, 153, 153);
+  }
+
+  .pagination-next,
+  .pagination-prev {
+    vertical-align: top;
+    cursor: pointer;
   }
 </style>
