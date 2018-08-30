@@ -19,7 +19,6 @@
 
 ## 配置
 #### vue-cli
-
 ```
 npm install -g vue-cli
 vue init webpack project-name
@@ -33,8 +32,6 @@ vue-cli中默认配置好了sass，只需要下载下面两个模块。
 npm install node-sass --save-dev
 npm install sass-loader --save-dev
 ```
-#### 
-
 #### vuex
 
 ```

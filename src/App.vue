@@ -23,6 +23,7 @@
   article {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    padding-bottom: 30px;
     color: #333333;
     overflow: hidden;
     font-size: 14px;
