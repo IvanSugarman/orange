@@ -139,3 +139,75 @@ foo()显示的创建并返回了一个事件订阅对象，调用代码得到这
 4. 未能传递参数值
 Promise中，如果没有使用值显示决议，此值为undefined。不论这个值是什么，都会被传给所有注册的回调。还有一点，如果使用多个参数调用resolve或者reject，第一个参数之后的所有参数都会被忽略。
 
+#### 链式流
+Promise不止是一个单步执行thie-then-that操作的机制。我们可以将多个Promise连接到一起表示一系列异步步骤。
+- 每次对Promise调用then(), 都会创建并返回一个新的Promise
+- 如果在完成或者拒绝处理函数内部，返回一个值或抛出一个异常，新返回的(可连接)的Promise就相应的决议
+- 如果完成或拒绝处理函数返回一个Promise，将会被好在哪开，不管其决议值是什么，都会成为当前then()返回的链接Promise的决议值。 
+
+> 使得Promise序列真正能够在每一步有异步能力的关键是，Promise.resolve()/reject()传递的是一个Promise或thenable而不是其函数的最终值。Promise.resolve()会直接返回接受到的真正Promise，或者展开接受到的thenable并在同时递归的前进。所以在then方法的内部，尽量显示的使用return或者throw，不显示的调用return会返回undefined。
+
+##### Promise坠落
+关于以下代码
+```javascript
+Promise.resolve('foo').then(Promise.resolve('bar')).then(function(result) {
+    // 输出foo
+    console.log(result); 
+});
+```
+
+产生这样的输出是因为给then方法传递了一个非函数(比如promise对象)的值，代码会理解为`then(null)`，因此前一个promise的结果产生了坠落的效果。
+
+#### 错误处理
+1. error-first回调风格
+```javascript
+foo ((err, val) => {
+    if (err) {
+        console.error(error);
+    } else {
+        console.log(val);    
+    }
+});
+```
+
+传给foo()的回调函数保留第一个参数err，用于在出错时接受信号，如果存在就任务出错。当多级error-first回调交织在一起，加上这些if，不可避免的导致了回调地狱风险。
+
+2. split-callback分离回调风格
+在Promise中使用分离回调，一个回调用于完成情况，一个回调用于拒绝情况。但是，如果通过无效的方式使用Promise API并且出现一个错误阻碍了正常的Promise构造，结果会得到一个立即抛出的异常而不是一个被拒绝的Promise。
+
+为了避免丢失忽略和抛弃的Promise错误，Promise的最佳实践是**最后总以一个catch()结束**。如下例，没有为then传入拒绝处理函数，所以默认的处理函数被替换掉了，这样进入p的错误以及p之后的决议的错误都会传递到最后的handleErrors.
+```javascript
+var p = Promise.resolve(42);
+
+p.then(
+    function fulfilled(msg) {
+        // 数字没有string函数，所以抛出错误
+        console.log(msg.toLowerCase());        
+    }
+).catch(handleErrors);
+```
+> 不加catch()方法会让回调函数中抛出的异常被吞噬，在控制台看不到相应错误，尽量在promise调用链最后添加`.catch(console.log.bind(console));`
+
+
+#### Promise模式
+- Promise.all([])
+
+等待两个或者更多并行/并发的任务完成才将继续。从Promise.all([])调用返回的promise会收到一个完成消息。这是一个由**所有传入promise的完成消息组成的数组，与指定的顺序一致**。严格来说，传给Promise.all的数组值可以是Promise、thenable甚至是立即值。就本质而言，其列表每个值都会通过Promise.resolve()过滤，以确保要等待的是一个真正的Promise，所以立即值会被规范化为值构建的Promise。如果数组为空，主Promise会立即完成。
+
+> 应该为每一个promise关联一个拒绝/错误处理函数。尤其是从Promise.all([])返回的那个
+
+- Promise.race([])
+只响应第一个完成的Promise而抛弃其他Promise。Promise.race([])也接受单个数组参数，由一个或者多个Promise、thenable或立即值组成。一旦有任何一个Promise决议为完成，Promise.race([..])就会完成。一旦有任何一个Promise为拒绝，其就会拒绝。
+
+> 如果传入了一个空数组，主race()的Promise将永远不会决议，而不是立即决议。在ES6中指定它完成或拒绝，抑或是抛出某种同步错误。但是Promise库时间上早于ES6，不得已而遗留了这个问题。
+
+#### Promise API
+1. new Promise((resolve, reject) => { // reject/resolve });
+2. Promise.resolve() / Promise.reject() 
+    Promise.reject用于创建一个已被拒绝的Promise的快捷方式。Promise.resolve用于创建一个已完成的Promise，但是其也会展开thenable值，在这种情况下，返回Promise采用传入的这个thenable的最终决议值，可能完成或者拒绝。如果传入是真正的Promise, Promise.resolve什么也不会做，只会将这个值返回。
+3. then() / catch()
+    每个Promise实例都有then与catch方法，决议后会马上调用两个处理函数之一。then接受一个或者两个参数，如果两者中的任何一个被省略或者作为非函数值传入的话，就会替换为相应的默认回调。默认完成回调只是把消息传递下去，默认拒绝回调则只是重新抛出其接受的出错原因。
+    
+    catch()只接受一个拒绝回调作为参数，并自动替换默认完成回调。其等价于`then(null, ..)` 
+
+4. Promise.all([..]) / Promise.race([..])
