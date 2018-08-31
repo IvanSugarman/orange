@@ -11,10 +11,10 @@
 
 <script type="text/ecmascript-6">
   export default{
-    data() {
-      return {
-        list: this.$store.getters.getRList,
-      };
+    computed: {
+      list: function() {
+        return this.$store.getters.getRList;
+      },
     },
   };
 </script>
@@ -44,5 +44,18 @@
 
   .name:hover {
     text-decoration: underline;
+  }
+
+  .pagination {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(153, 153, 153);
+  }
+
+  .pagination-next,
+  .pagination-prev {
+    vertical-align: top;
+    cursor: pointer;
   }
 </style>

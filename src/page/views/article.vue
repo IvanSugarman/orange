@@ -8,18 +8,110 @@
       </header>
       <router-view v-highlight></router-view>
     </div>
+    <div class="directory">
+      <ul class="toc">
+        <li v-for="(item, index) in list">
+          <span @click="goAnchor(index)" :class="{'highlight-title':item.isActive}" :key="index">{{(index + 1) + '. ' + item.title}}</span>
+          <ul class="toc-sub">
+            <li v-for="(subItem, subIndex) in item.child">
+              <span @click="goAnchor(index, subIndex)" :class="{'highlight-title':subItem.isActive}" :key="subIndex">
+                {{(index + 1) + '.' + (subIndex + 1) + ' ' + subItem.title}}</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   export default{
     mounted(){
+      this.getDirectory();
+      window.addEventListener('scroll',this.handleScroll);
+      window.addEventListener('resize',this.handleScroll);
+    },
+    destroyed() {
+      window.removeEventListener("scroll", this.handleScroll);
+      window.addEventListener('resize', this.handleScroll);
     },
     data() {
       return {
         article: this.$store.getters.getArticle(this.$route.name),
+        list: [],
+        activeElement: {}
       };
     },
+    methods: {
+      getDirectory() {
+        let directories = document.querySelectorAll('article h2'),
+          offsetTop,
+          arr = [];
+
+        directories.forEach((element, index) => {
+          element.id = 'anchor-' + index;
+          offsetTop = !!index ? element.offsetTop : 0;
+
+          arr.push({
+            element,
+            title: element.innerText,
+            offsetTop,
+            isActive: false,
+            child: this.collectH4s(element, index)
+          });
+        });
+
+        arr[0].isActive = true;
+        this.activeElement = arr[0];
+        this.list = arr;
+      },
+      goAnchor(index, subIndex) {
+        if (arguments.length == 1) {
+          document.documentElement.scrollTop = this.list[index].element.offsetTop;
+        } else {
+          document.documentElement.scrollTop = this.list[index].child[subIndex].element.offsetTop;
+        }
+      },
+      handleScroll() {
+        let self = this,
+          doc = document.documentElement,
+          top = doc && doc.scrollTop || document.body.scrollTop;
+
+        this.list.forEach((element) => {
+          checkActive(element);
+          element.child.forEach(checkActive);
+        });
+
+        function checkActive(ele) {
+          if (top >= ele.offsetTop) {
+            self.activeElement.isActive = false;
+            self.activeElement = ele;
+            ele.isActive = true;
+          }
+        }
+      },
+      collectH4s(h, idx) {
+        let h4s = [],
+          count = 0,
+          next = h.nextSibling;
+
+        while (next && next.tagName !== 'H2') {
+          if (next.tagName === 'H4') {
+            next.id = 'anchor-' + idx + '-' + count;
+            h4s.push({
+              element: next,
+              title: next.innerText,
+              offsetTop: next.offsetTop,
+              isActive: false,
+            });
+            count++;
+          }
+          next = next.nextSibling;
+        }
+
+        return h4s;
+      }
+    }
   };
 </script>
 
@@ -57,6 +149,55 @@
     min-width: 600px;
   }
 
+  .directory {
+    position: fixed;
+    right: 0;
+    top: 120px;
+    height: 75%;
+    width: 20%;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+
+  .toc {
+    width: 100%;
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  .toc li {
+    cursor: pointer;
+    list-style-type: none;
+  }
+
+  .toc span {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+  }
+
+  .toc .highlight-title {
+    color: #fc6423;
+  }
+
+  .toc .highlight-title:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    content: '';
+  }
+
+  .toc span:hover {
+    color: #fc6423;
+  }
+
+  .toc-sub span {
+    padding-left: 35px;
+  }
 
 
 </style>
