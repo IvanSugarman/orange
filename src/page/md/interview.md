@@ -1,3 +1,4 @@
+## 归纳整理
 #### 1. Promise原理、实现异步的方法 
 
 resolved rejected pending三种状态，创建promise时该promise为pending状态，调用resolve()与reject()方法可以进行promise的状态变更。可以通过then进行链式调用，then包含两个参数，分别是成功resolved的回调和失败reject的回调，catch的作用则是捕捉promise的错误，与then的reject回调基本一致。但是promise的回调具有冒泡性质，能够不断传递，同时也可以catch到then的异常，所以可以集合在最后的catch进行处理。
