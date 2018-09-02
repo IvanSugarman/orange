@@ -1,6 +1,6 @@
 记录一下第一个H5项目中踩到的坑与一些思路问题
 
-### 适配
+## 适配
 1.  设置viewport为设备宽度
 ```xml
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
@@ -42,7 +42,7 @@ $browser-default-font-size: 124px !default;
 5. 以上方式基于宽度进行REM计算，当屏幕宽高比过低时(pad)，需要使用媒体查询或者其他方式进行布局。本次项目中将content部分通过计算进行比例上的缩小(transform:scale)。rem计算出的content部分高度要大于设置的高度百分比。固定头部底部高度。通过clientHeight - header.Height - footer.Height得到屏幕剩余高度。通过realHeight / lessHeight 比例计算缩放比例并进行配置。
 
 
-### 布局
+## 布局
 布局上主要使用flex布局,参考阮一峰个人博客中flex布局语法篇与实战篇。
 
 1. 设置flex布局
@@ -85,8 +85,8 @@ flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
 align-self: auto | flex-start | flex-end | center | baseline | stretch;
 ```
  
-### Swiper
-##### html
+## Swiper
+#### # html
 
 ```
  <div class="swiper-wrapper">
@@ -111,7 +111,7 @@ function setSwiper() {
     });
 }
 ```
-##### swiper常用方法
+#### swiper常用方法
 
 ```
     mySwiper.slideNext(runCallbacks, speed);
@@ -120,7 +120,7 @@ function setSwiper() {
     mySwiper.slideTo(index,speed, runCallbacks);
 ```
 
-##### swiper常用事件
+#### swiper常用事件
 
 ```
     mySwiper = new Swiper('.swiper-container', {
@@ -134,7 +134,7 @@ function setSwiper() {
 ```
 ### Canvas
 
-##### 初始化
+#### 初始化
 大多数Canvas的绘图api都通过canvas.getContext()获得一个绘图环境对象。
 ```
  var c = document.getElementById("load");
@@ -143,14 +143,14 @@ function setSwiper() {
  h = canvas.height,
 ```
 
-##### 绘制一个矩形
+#### 绘制一个矩形
 
 ```
 ctx.fillStyle='#FF0000';
 ctx.fillRect(x,y,width,height);
 ```
 
-##### 绘制一个圆
+#### 绘制一个圆
 
 ```
 ctx.beginPath(); //起始一条路径，或重置当前路径
@@ -160,7 +160,7 @@ ctx.closePath();
 ctx.fill();//填充当前绘图路径;
 ```
 
-##### 变换
+#### 变换
 弧度以圆形的X轴正向为起点，以0表示。一个圆弧总共为2 * Math.PI。
 
 ```
@@ -168,7 +168,7 @@ ctx.rotate(angle) //旋转
 context.translate(x,y) //平移
 ```
 
-##### 绘制图形
+#### 绘制图形
 
 ```
 var img = new Image();
@@ -181,8 +181,8 @@ img.onload = function(){
    ctx.drawImage(img, x, y, width,height,destX,destY,destWidth, destHeight);
 }
 ```
-### H5音频视频
-##### 音频
+## H5音频视频
+#### 音频
     <audio src="./video/music.mp3" loop="loop" id="loopMusic" preload></audio>
     
 在IOS中音频文件不允许自动播放。可以通过微信的WeixinJSBridgeReady事件。这个是微信自带提供的事件。
@@ -217,7 +217,7 @@ function audioAutoPlay(id){
 }  
 ```
 
-##### 视频
+#### 视频
 在IOS中视频自动会通过IOS自带的播放器进行播放，这样无法做到自动播放，在浏览上也有问题。通过playsinline属性进行解决。
     
     <video id="mainvideo01" src="./video/v01.mov" width="100%" x5-playsinline=""
@@ -242,7 +242,7 @@ function audioAutoPlay(id){
   }
 ```
 
-### 微信分享代码
+## 微信分享代码
 此部分代码用于项目中复用。
 
 ```
