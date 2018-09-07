@@ -87,7 +87,7 @@ const articles = [{
   title: 'fetch',
   type: 'md',
 },{
-  title: 'async',
+  title: 'js-study-async',
   type: 'md',
 }];
 
