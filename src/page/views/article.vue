@@ -159,6 +159,12 @@
     overflow-y: auto;
   }
 
+  @media (max-width: 900px) {
+    .directory {
+        display: none;
+    }   
+  }
+
   .toc {
     width: 100%;
     font-size: 14px;
