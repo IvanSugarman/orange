@@ -135,6 +135,13 @@ export default {
     date: '27',
     year: '2018',
     star: false,
+  }, {
+    title: 'javascript-async',
+    year: '2018',
+    month: '09',
+    date: '07',
+    href: 'js-study-async',
+    star: true,
   }],
   tools: [{
     title: 'taskbook',
