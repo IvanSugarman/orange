@@ -86,6 +86,9 @@ const articles = [{
 },{
   title: 'fetch',
   type: 'md',
+},{
+  title: 'js-study-async',
+  type: 'md',
 }];
 
 const tools = [{
