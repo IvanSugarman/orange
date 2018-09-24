@@ -80,13 +80,6 @@ export default {
     href: 'nginx',
     star: false,
   },{
-    title: '浏览器渲染',
-    href: 'browser-render',
-    month: '05',
-    date: '25',
-    year: '2018',
-    staru: false,
-  },{
     title: 'tcp/ip',
     year: '2018',
     month: '05',
@@ -141,6 +134,13 @@ export default {
     month: '09',
     date: '07',
     href: 'js-study-async',
+    star: true,
+  }, {
+    title: 'life-of-a-pixel',
+    year: '2018',
+    month: '09',
+    date: '24',
+    href: 'life-of-a-pixel',
     star: true,
   }],
   tools: [{

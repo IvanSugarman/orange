@@ -69,9 +69,6 @@ const articles = [{
   title: 'tcp-ip',
   type: 'md',
 },{
-  title: 'browser-render',
-  type: 'md',
-},{
   title: 'linux-user',
   type: 'md',
 },{
@@ -88,6 +85,9 @@ const articles = [{
   type: 'md',
 },{
   title: 'js-study-async',
+  type: 'md',
+},{
+  title: 'life-of-a-pixel',
   type: 'md',
 }];
 
