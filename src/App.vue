@@ -179,4 +179,8 @@
     margin-bottom: 0;
   }
 
+  article p > img {
+    width: 100%;
+  }
+
 </style>

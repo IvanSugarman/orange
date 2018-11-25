@@ -89,6 +89,9 @@ const articles = [{
 },{
   title: 'life-of-a-pixel',
   type: 'md',
+}, {
+  title: 'stack-context',
+  type: 'md',
 }];
 
 const tools = [{
