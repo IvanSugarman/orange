@@ -8,9 +8,9 @@
           <router-link tag="li" to="list">
             notes
           </router-link>
-          <router-link tag="li" to="tools">
+          <li>
             tools
-          </router-link>
+          </li>
           <router-link tag="li" to="book">
             books
           </router-link>

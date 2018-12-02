@@ -92,6 +92,9 @@ const articles = [{
 }, {
   title: 'stack-context',
   type: 'md',
+}, {
+  title: 'awk',
+  type: 'md',
 }];
 
 const tools = [{

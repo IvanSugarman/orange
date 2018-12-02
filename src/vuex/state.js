@@ -149,12 +149,30 @@ export default {
     date: '24',
     href: 'stack-context',
     star: false,
+  },{
+    title: 'taskbook',
+    href: 'taskbook',
+    month: '08',
+    date: '23',
+    year: '2018',
+  },{
+    title: 'awk入门',
+    href: 'awk',
+    month: '12',
+    date: '02',
+    year: '2018',
   }],
   tools: [{
     title: 'taskbook',
     href: 'taskbook',
     month: '08',
     date: '23',
+    year: '2018',
+  },{
+    title: 'awk入门',
+    href: 'awk',
+    month: '12',
+    date: '02',
     year: '2018',
   }],
   book: [{
